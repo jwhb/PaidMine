@@ -166,8 +166,28 @@ p {
     .footer a {
         color: #ddd;
     }
+    
 
+/*
+ * -- Shop Login --
+ */
+.shoplogin-form{
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+  .shoplogin-form button{
+    margin-left: 1em;
+  }
 
+/*
+ * -- FOOTER --
+ */
+.footer-username{
+    text-align: center;
+    padding-bottom: 0.5em;
+}
 
 /*
  * -- TABLET MEDIA QUERIES --

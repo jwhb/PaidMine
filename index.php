@@ -11,6 +11,8 @@ function initMysql(){
   return $mysql;
 }
 
+session_start();
+
 $args = $_REQUEST;
 unset($args['p']);
 
@@ -18,6 +20,7 @@ $action = (isset($args['p']))? $args['p'] : 'index';
 switch($action){
 	case 'index':
 	case 'shop':
+	case 'shoplogin':
 	  require_once(f_inc . 'a_shop.php');
 	  $action = new ShopAction(initMysql());
 	  $action->dispatch($args);
