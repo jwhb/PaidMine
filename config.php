@@ -1,5 +1,6 @@
 <?php
 
+define('debug', false);
 define('f_inc', 'inc/');
 define('provider', 'PaidMine');
 
