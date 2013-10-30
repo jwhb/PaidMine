@@ -1,0 +1,26 @@
+<?php
+
+require_once('config.php');
+require_once(f_inc . 'c_mysql.php');
+require_once(f_inc . 'c_raintpl.php');
+require_once(f_inc . 'c_mytpl.php');
+Config::postConfig();
+
+function initMysql(){
+  $mysql = new mysql(Config::getMysqlInfo());
+  return $mysql;
+}
+
+$args = $_GET;
+unset($args['p']);
+
+$action = (isset($args['p']))? $args['p'] : 'index';
+switch($action){
+	case 'index':
+	  require_once(f_inc . 'a_shop.php');
+	  $action = new ShopAction(initMysql());
+	  $action->dispatch($args);
+	default:
+	  
+	  break;
+}
