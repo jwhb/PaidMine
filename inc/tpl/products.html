@@ -11,11 +11,10 @@
         <div class="pricing-table-desc">
           {$value.items.description} 
         </div>
-        <form action="?p=index" method="post">
+        <form action="" method="post">
           <input type="hidden" name="a" value="buy" />
           <input type="hidden" name="id" value="{$value.items.id}" />
-          <button type="submit" href="?p=index&a=buy&item={$value.items.id}"
-              class="pure-button button-choose">Purchase</button>
+          <button type="submit" class="pure-button button-choose">Purchase</button>
         </form>
       </div>
     </div>
