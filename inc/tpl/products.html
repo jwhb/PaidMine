@@ -11,8 +11,12 @@
         <div class="pricing-table-desc">
           {$value.items.description} 
         </div>
-
-        <a href="?p=buy&item={$value.items.id}" class="pure-button button-choose">Purchase</a>
+        <form action="?p=index" method="post">
+          <input type="hidden" name="a" value="buy" />
+          <input type="hidden" name="id" value="{$value.items.id}" />
+          <button type="submit" href="?p=index&a=buy&item={$value.items.id}"
+              class="pure-button button-choose">Purchase</button>
+        </form>
       </div>
     </div>
     {else}

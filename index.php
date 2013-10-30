@@ -11,12 +11,13 @@ function initMysql(){
   return $mysql;
 }
 
-$args = $_GET;
+$args = $_REQUEST;
 unset($args['p']);
 
 $action = (isset($args['p']))? $args['p'] : 'index';
 switch($action){
 	case 'index':
+	case 'shop':
 	  require_once(f_inc . 'a_shop.php');
 	  $action = new ShopAction(initMysql());
 	  $action->dispatch($args);
