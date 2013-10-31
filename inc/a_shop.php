@@ -1,6 +1,6 @@
 <?php
 
-class ShopAction{
+class ShopAction implements Action{
   
   private $mysql;
   private $item_table = 'items';
@@ -13,8 +13,8 @@ class ShopAction{
   public function dispatch($args){
     $tpl = new mytpl();
     if(@$args['a'] == 'buy' && isset($args['id'])){
-      //Purchase request
-      
+      //TODO: Purchase request
+      die('<h2>INDEV: PURCHASE REQUEST</h2>');
     }elseif(!isset($_SESSION['mcname']) && !isset($args['mcname'])){
       $tpl->assign('title', 'Shop Login');
       $tpl->draw('shoplogin');
