@@ -24,6 +24,16 @@ switch($action){
 	  $action = new AdminAction(initMysql());
 	  $action->dispatch($args);
 	  break;
+	case 'register':
+	  require_once(f_inc . 'a_register.php');
+	  $action = new RegisterAction();
+	  $action->dispatch($args);
+	  break;
+	case 'login':
+	  require_once(f_inc . 'a_login.php');
+	  $action = new LoginAction();
+	  $action->dispatch($args);
+	  break;
 	case 'index':
 	case 'shop':
 	case 'shoplogin':

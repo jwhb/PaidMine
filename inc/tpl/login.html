@@ -1,0 +1,13 @@
+<form class="shoplogin-form shoplogin-form-vert" method="post" action="?p=login" name="loginform">
+    {loop="errors"}
+        <p>{$value}</p>
+    {/loop}
+    {loop="messages"}
+        <p>{$value}</p>
+    {/loop}    
+    <input type="text" name="user_name" placeholder="Username" required><br />
+    <input type="password" name="user_password" placeholder="Password" required><br />
+    <input type="submit" name="login" class="pure-button pure-button-primary" value="Log in"><br /><br />
+
+</form>
+

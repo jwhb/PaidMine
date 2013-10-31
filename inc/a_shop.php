@@ -27,6 +27,9 @@ class ShopAction implements Action{
       }
       if(@$args['a'] == 'shoplogout'){
         if(!$this->delMCName());
+        $tpl->assign('title', 'Shop Login');
+        $tpl->draw('shoplogin');
+        exit();
       }
       //Products page
       $this->item_table = (isset($this->mysql->info['item_table']))
@@ -49,6 +52,7 @@ class ShopAction implements Action{
   }
   
   public static function delMCName(){
+    $_SESSION['mcname'] = false;
     session_destroy();
   }
   

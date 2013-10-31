@@ -13,7 +13,8 @@ class Config {
         'pass' => '',
         'db' => 'paidmine',
         
-        'item_table' => 'items'
+        'item_table' => 'items',
+        'user_table' => 'users'
     ));
   }
   

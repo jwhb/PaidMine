@@ -11,8 +11,17 @@ class AdminAction implements Action{
   }
   
   public function dispatch($args){
-    $tpl = new mytpl();
-    $tpl->assign('title', 'Admin Panel');
-    $tpl->draw('admin');
+    require_once(f_inc . 'c_pl_login.php');
+    $login = new PL_Login();
+    
+    if ($login->isUserLoggedIn() == true) {
+      $tpl = new mytpl();
+      $tpl->assign('title', 'Admin Panel');
+      $tpl->draw('admin');
+    }else{
+      require_once(f_inc . 'a_login.php');
+      $la = new LoginAction();
+      $la->dispatch(array());
+    }
   }
 }
