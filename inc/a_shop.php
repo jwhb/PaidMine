@@ -13,8 +13,7 @@ class ShopAction implements Action{
   public function dispatch($args){
     $tpl = new mytpl();
     if(@$args['a'] == 'buy' && isset($args['id'])){
-      //TODO: Purchase request
-      die('<h2>INDEV: PURCHASE REQUEST</h2>');
+      $this->startPurchase($args['id'], $tpl);
     }elseif(!isset($_SESSION['mcname']) && !isset($args['mcname'])){
       $tpl->assign('title', 'Shop Login');
       $tpl->draw('shoplogin');
@@ -39,6 +38,20 @@ class ShopAction implements Action{
       $tpl->draw('products');
     }
   }
+  
+  public function startPurchase($item_id, $tpl = null){
+    if($tpl == null) $tpl = new MyTPL();
+    $item = $this->getItemById($item_id);
+    if(!$item){
+      //TODO: Better error messages
+      die('Item with ID <strong>' . $item_id . '</strong> not found.');
+    }else{
+      $tpl->assign('item', $item);
+      $tpl->draw('purchase');
+    }
+  }
+  
+  /* Helper functions */
   
   public static function setMCName($mcname){
     if(!isset($_SESSION)){
@@ -65,4 +78,11 @@ class ShopAction implements Action{
     return($result);
   }
   
+  public function getItemById($item_id){
+    $result = $this->mysql->row(array(
+        'table' => $this->item_table,
+        'condition' => 'id=' . $item_id
+    ));
+    return($result);
+  }
 }
