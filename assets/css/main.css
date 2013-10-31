@@ -177,7 +177,11 @@ p {
     margin: 0 auto;
     text-align: center;
 }
-  .shoplogin-form button{
+  .shoplogin-form-vert input{
+    text-align: center;
+    margin: 5px;
+  }
+  .shoplogin-form.horiz input[type="submit"]{
     margin-left: 1em;
   }
 
