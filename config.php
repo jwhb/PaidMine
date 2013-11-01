@@ -12,9 +12,12 @@ class Config {
         'user' => 'root',
         'pass' => '',
         'db' => 'paidmine',
+
+        'log_invalid_ipns' => true,
         
         'item_table' => 'items',
-        'user_table' => 'users'
+        'user_table' => 'users',
+        'log_pp_raw_table' => 'log_pp_raw'
     ));
   }
   
