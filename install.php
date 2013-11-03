@@ -5,7 +5,12 @@ error_reporting(0);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Installation &middot; PaidMine</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+    <title>Installation &middot; PaidMine</title>
 </head>
 
 <div style="text-align: center; width: 70%; background: white; margin-left: auto; margin-right: auto; padding: 25px; border-radius: 5px;">
