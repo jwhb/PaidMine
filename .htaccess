@@ -1,5 +1,5 @@
 ﻿Order Deny,Allow
 Deny from all
-<FilesMatch "^(index\.php)?$">
+<FilesMatch "^((index|install)\.php)?$">
   Allow from all
 </FilesMatch>
